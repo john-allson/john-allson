@@ -230,7 +230,7 @@ function showToast(message) {
     document.body.appendChild(toast);
   }
 
-  toast.innerHTML = `<i class="fa-solid fa-circle-info" style="color: var(--accent-cyan);"></i> <span>${message}</span>`;
+  toast.innerHTML = `<i class="fa-solid fa-circle-info"></i> <span>${message}</span>`;
   toast.classList.add('show');
 
   setTimeout(() => {
