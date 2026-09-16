@@ -18,6 +18,7 @@ Official personal portfolio website for **John Allson M** — Python Full Stack 
   - **Innovative Company** — *Artificial Intelligence Intern* (July 2025)
   - **Thedal** — *Data Analyst Intern* (Dec 2024 – Jan 2025)
 - **Key Projects**:
+  - **Tamil Bible with AI**: Cross-platform mobile app on Google Play Store built with Flutter, Supabase, and Firebase featuring AI Study assistant and audio playback.
   - **YouTube Automation AI Tool**: End-to-end automated video creation pipeline with DeepSeek LLM, web scraping, and Google APIs.
   - **AI Study & Research Chatbot**: Context-aware conversational RAG system with Groq API & Phidata.
   - **Gracemo Standalone Robot (RPi 5)**: Standalone intelligent conversational robot powered by Raspberry Pi 5 with custom hardware integration, circuitry, speech recognition, and VNC remote facial expression display streaming.
