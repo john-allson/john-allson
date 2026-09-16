@@ -21,7 +21,6 @@ Official personal portfolio website for **John Allson M** — Python Full Stack 
   - **YouTube Automation AI Tool**: End-to-end automated video creation pipeline with DeepSeek LLM, web scraping, and Google APIs.
   - **AI Study & Research Chatbot**: Context-aware conversational RAG system with Groq API & Phidata.
   - **Gracemo Robot**: Voice-controlled intelligent robot with web dashboard, speech recognition, and Whisper.
-  - **Anna University CGPA & GPA Calculator**: Regulation-compliant engineering GPA/CGPA computation tool.
 
 ---
 
