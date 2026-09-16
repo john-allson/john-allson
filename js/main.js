@@ -167,6 +167,57 @@ document.addEventListener('DOMContentLoaded', () => {
       contactForm.reset();
     });
   }
+
+  // --- Resume Modal Logic ---
+  const resumeModal = document.getElementById('resume-modal');
+  const openResumeBtns = document.querySelectorAll('.open-resume-trigger');
+  const closeResumeBtn = document.getElementById('close-resume-btn');
+  const printResumeBtn = document.getElementById('print-resume-btn');
+
+  function openResume() {
+    if (resumeModal) {
+      resumeModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeResume() {
+    if (resumeModal) {
+      resumeModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  openResumeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openResume();
+    });
+  });
+
+  if (closeResumeBtn) {
+    closeResumeBtn.addEventListener('click', closeResume);
+  }
+
+  if (resumeModal) {
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) {
+        closeResume();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && resumeModal && resumeModal.classList.contains('open')) {
+      closeResume();
+    }
+  });
+
+  if (printResumeBtn) {
+    printResumeBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
 });
 
 // --- Toast Helper Function ---
