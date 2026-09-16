@@ -234,10 +234,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (printResumeBtn) {
-    printResumeBtn.addEventListener('click', () => {
-      window.print();
+    printResumeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (resumeModal) {
+        resumeModal.classList.add('open');
+      }
+      setTimeout(() => {
+        window.print();
+      }, 60);
     });
   }
+
+  // Ensure modal is open during any browser print call
+  window.addEventListener('beforeprint', () => {
+    if (resumeModal) {
+      resumeModal.classList.add('open');
+    }
+  });
 });
 
 // --- Toast Helper Function ---
