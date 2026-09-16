@@ -20,7 +20,7 @@ Official personal portfolio website for **John Allson M** — Python Full Stack 
 - **Key Projects**:
   - **YouTube Automation AI Tool**: End-to-end automated video creation pipeline with DeepSeek LLM, web scraping, and Google APIs.
   - **AI Study & Research Chatbot**: Context-aware conversational RAG system with Groq API & Phidata.
-  - **Gracemo Robot**: Voice-controlled intelligent robot with web dashboard, speech recognition, and Whisper.
+  - **Gracemo Standalone Robot (RPi 5)**: Standalone intelligent conversational robot powered by Raspberry Pi 5 with custom hardware integration, circuitry, speech recognition, and VLAN facial expression network streaming.
 
 ---
 
