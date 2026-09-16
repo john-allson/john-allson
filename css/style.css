@@ -563,11 +563,16 @@ section {
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(2.3rem, 3.8vw, 3.5rem);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   margin-bottom: 18px;
+}
+
+.hero-name-wrap {
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .hero-subtitle {
@@ -622,105 +627,220 @@ section {
   box-shadow: var(--shadow-sm);
 }
 
-/* Hero Portrait & Interactive Visual */
+/* --- Hero Developer Bento Showcase Card --- */
 .hero-visual {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
-.avatar-wrapper {
-  position: relative;
-  width: 360px;
-  height: 360px;
-  max-width: 100%;
-}
-
-.avatar-border-glow {
-  position: absolute;
-  inset: -6px;
-  border-radius: 40px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 100%);
-  opacity: 0.6;
-  filter: blur(14px);
-  z-index: 0;
-  animation: glowRotate 8s ease-in-out infinite alternate;
-}
-
-[data-theme="light"] .avatar-border-glow {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.05) 100%);
-}
-
-@keyframes glowRotate {
-  0% { transform: rotate(0deg) scale(0.98); opacity: 0.5; }
-  100% { transform: rotate(4deg) scale(1.02); opacity: 0.8; }
-}
-
-.avatar-card {
+.bento-profile-card {
   position: relative;
   width: 100%;
-  height: 100%;
-  border-radius: 36px;
-  overflow: hidden;
-  background: var(--bg-surface);
-  border: 2px solid var(--border-card);
+  max-width: 440px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-card);
+  border-radius: 26px;
+  padding: 16px;
+  box-shadow: var(--shadow-lg), 0 0 50px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
   z-index: 1;
 }
 
-.avatar-card img {
+[data-theme="light"] .bento-profile-card {
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 0, 0, 0.06);
+}
+
+.bento-profile-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(255, 255, 255, 0.12);
+}
+
+/* Glass Header with Terminal Controls & Status */
+.bento-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bento-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bento-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bento-dots .dot-red { background: #ef4444; }
+.bento-dots .dot-yellow { background: #eab308; }
+.bento-dots .dot-green { background: #22c55e; }
+
+.bento-badge-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+  letter-spacing: 0.02em;
+}
+
+.bento-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* Portrait Frame */
+.bento-portrait-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #050505;
+  border: 1px solid var(--border-subtle);
+}
+
+.bento-avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  display: block;
   transition: transform var(--transition-slow);
 }
 
-.avatar-card:hover img {
-  transform: scale(1.04);
+.bento-profile-card:hover .bento-avatar-img {
+  transform: scale(1.03);
 }
 
-/* Floating Badges */
-.floating-chip {
+.bento-portrait-overlay {
   position: absolute;
-  padding: 8px 16px;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%);
+  pointer-events: none;
+}
+
+/* Clean Floating Tag on Image Edge */
+.bento-tag-floating {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
-  background: var(--bg-surface);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--border-card);
-  color: var(--text-primary);
   font-size: 0.82rem;
   font-weight: 600;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: var(--shadow-md);
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   z-index: 2;
+}
+
+.bento-tag-floating i {
+  color: #10b981;
+}
+
+/* Developer Identity & Details */
+.bento-profile-info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bento-name-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.bento-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.bento-role {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.bento-location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
   white-space: nowrap;
-  animation: floatAnim 4s ease-in-out infinite alternate;
 }
 
-.chip-1 {
-  top: 8%;
-  left: -20px;
-  animation-delay: 0s;
+.bento-location-tag i {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
 }
 
-.chip-2 {
-  bottom: 12%;
-  left: -30px;
-  animation-delay: 1.2s;
+/* Skills Tray */
+.bento-skills-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 4px;
 }
 
-.chip-3 {
-  top: 45%;
-  right: -30px;
-  animation-delay: 2.4s;
+.bento-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
 }
 
-@keyframes floatAnim {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
+.bento-skill-pill:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+.bento-skill-pill i {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
 }
 
 /* Metrics Ribbon */
@@ -2493,42 +2613,18 @@ body.menu-open {
     gap: 12px;
   }
 
-  /* Hero Portrait & Badges Tray */
+  /* Hero Bento Profile Showcase */
   .hero-visual {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: visible;
-  }
-
-  .avatar-wrapper {
-    width: 220px;
-    height: 220px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  /* Prevent chips from causing horizontal overflow by stacking below portrait */
-  .floating-chip {
-    position: static;
-    margin: 10px auto 0;
-    width: auto;
-    max-width: 94%;
-    animation: none;
-    font-size: 0.8rem;
-    padding: 8px 16px;
-    transform: none !important;
-    white-space: normal;
-    text-align: center;
     justify-content: center;
+    align-items: center;
+    margin-top: 10px;
   }
 
-  .chip-1, .chip-2, .chip-3 {
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
+  .bento-profile-card {
+    max-width: 390px;
+    margin: 0 auto;
   }
 
   /* Metrics Ribbon */
@@ -3033,9 +3129,23 @@ body.menu-open {
     font-size: clamp(1.9rem, 8vw, 2.3rem);
   }
 
-  .avatar-wrapper {
-    width: 200px;
-    height: 200px;
+  .bento-profile-card {
+    padding: 12px;
+    border-radius: 20px;
+    max-width: 320px;
+  }
+
+  .bento-name {
+    font-size: 1.05rem;
+  }
+
+  .bento-skills-tray {
+    gap: 4px;
+  }
+
+  .bento-skill-pill {
+    padding: 4px 8px;
+    font-size: 0.72rem;
   }
 
   .project-img-wrapper {
@@ -3066,9 +3176,16 @@ body.menu-open {
     font-size: 1.8rem;
   }
 
-  .avatar-wrapper {
-    width: 175px;
-    height: 175px;
+  .bento-profile-card {
+    padding: 10px;
+    border-radius: 16px;
+    max-width: 100%;
+  }
+
+  .bento-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .metrics-ribbon {
