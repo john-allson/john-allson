@@ -332,6 +332,10 @@ section {
   width: 100%;
 }
 
+.mobile-drawer-cta {
+  display: none;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -733,6 +737,11 @@ section {
   transform: translateY(-4px);
   border-color: var(--border-accent);
   box-shadow: var(--shadow-md);
+}
+
+.executive-summary-card {
+  margin-bottom: 32px;
+  border-left: 4px solid var(--text-primary);
 }
 
 .card-title {
@@ -1773,7 +1782,30 @@ textarea.form-control {
   }
 }
 
-/* --- Responsive Media Queries --- */
+/* --- Responsive Media Queries & Mobile Preview Optimization --- */
+
+/* Safe Area Insets for Modern Mobile Devices (iOS Notch, Dynamic Island, Home Bar) */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .verse-banner {
+    padding-top: calc(8px + env(safe-area-inset-top));
+  }
+  .site-footer {
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  }
+  .back-to-top {
+    bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+  .toast-notification {
+    bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Prevent body scrolling when mobile navigation drawer is active */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* --- Tablet & Medium Screens (max-width: 1024px) --- */
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1815,83 +1847,724 @@ textarea.form-control {
   }
 }
 
+/* --- Standard Mobile & Compact Tablets (max-width: 768px) --- */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
+  /* Header & Navbar */
+  .site-header {
+    height: 66px;
   }
 
-  .hero-title {
-    font-size: 2.6rem;
+  .navbar {
+    height: 66px;
   }
 
-  .hero-subtitle {
-    font-size: 1.15rem;
+  .brand-logo {
+    font-size: 1.2rem;
+    gap: 8px;
   }
 
+  /* Hide header CTA buttons on mobile bar to keep header pristine */
+  #nav-resume-btn,
+  #nav-cta-btn {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .theme-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.35rem;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-toggle:active {
+    transform: scale(0.94);
+  }
+
+  /* Full Screen Glassmorphism Mobile Drawer */
   .nav-links {
     position: fixed;
-    top: 72px;
+    top: 66px;
     left: 0;
+    right: 0;
     width: 100%;
-    background: var(--bg-surface);
+    max-height: calc(100vh - 66px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: var(--bg-glass-nav);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
     flex-direction: column;
-    padding: 32px 24px;
-    gap: 24px;
-    border-bottom: 1px solid var(--border-subtle);
-    transform: translateY(-150%);
-    transition: transform var(--transition-normal);
+    padding: 24px 20px 36px;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-card);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
     box-shadow: var(--shadow-lg);
+    z-index: 999;
   }
 
   .nav-links.open {
     transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
-  .mobile-toggle {
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a.nav-item {
     display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+  }
+
+  .nav-links a.nav-item:hover,
+  .nav-links a.nav-item.active {
+    background: var(--bg-surface-elevated);
+    color: var(--text-primary);
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  /* Drawer Actions */
+  .mobile-drawer-cta {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .mobile-drawer-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  /* Sections Spacing */
+  section {
+    padding: 64px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 32px 0 60px;
+    min-height: auto;
+  }
+
+  .status-pill {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 7.5vw, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    word-break: break-word;
+  }
+
+  .hero-summary {
+    font-size: 0.96rem;
+    line-height: 1.68;
+    margin-bottom: 28px;
+  }
+
+  /* Stack Hero Buttons for Touch Precision */
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 30px;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+
+  .social-links {
+    gap: 12px;
+  }
+
+  /* Hero Portrait & Badges Tray */
+  .hero-visual {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
   }
 
   .avatar-wrapper {
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    position: relative;
   }
 
-  .chip-1 { left: -10px; }
-  .chip-2 { left: -15px; }
-  .chip-3 { right: -15px; }
+  /* Prevent chips from causing horizontal overflow by stacking below portrait */
+  .floating-chip {
+    position: static;
+    margin: 10px auto 0;
+    width: auto;
+    max-width: 94%;
+    animation: none;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    transform: none !important;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .chip-1, .chip-2, .chip-3 {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+
+  /* Metrics Ribbon */
+  .metrics-ribbon {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+    padding: 22px 16px;
+  }
+
+  .metric-item::after {
+    display: none !important;
+  }
+
+  .metric-number {
+    font-size: 1.85rem;
+  }
+
+  .metric-label {
+    font-size: 0.8rem;
+  }
+
+  /* About & Executive Summary */
+  .glass-card {
+    padding: 24px 20px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
 
   .pillar-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding: 10px 0;
   }
 
   .timeline::before {
-    left: 18px;
+    left: 14px;
   }
 
   .timeline-dot {
-    left: 7px;
+    left: 4px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .timeline-dot::after {
+    width: 6px;
+    height: 6px;
   }
 
   .timeline-item {
-    padding-left: 50px;
+    padding-left: 40px;
+    margin-bottom: 30px;
   }
 
-  .timeline-header {
+  .timeline-card {
+    padding: 20px 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .timeline-role {
+    font-size: 1.15rem;
+  }
+
+  .timeline-company {
+    font-size: 0.95rem;
+  }
+
+  .timeline-badge {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+
+  .timeline-location {
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+
+  .timeline-bullets {
+    gap: 8px;
+  }
+
+  .timeline-bullets li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    padding-left: 18px;
+  }
+
+  /* Swipeable Filter Tabs for Skills */
+  .filter-tabs {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 14px 16px;
+    margin-bottom: 26px;
+    gap: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.84rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Projects Section */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-card {
+    border-radius: var(--radius-md);
+  }
+
+  .project-img-wrapper {
+    height: 200px;
+  }
+
+  .project-badge {
+    top: 12px;
+    left: 12px;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+
+  .project-body {
+    padding: 20px 18px;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .project-tags {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .project-tag {
+    font-size: 0.76rem;
+    padding: 4px 8px;
+  }
+
+  .project-footer {
     flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 16px;
+  }
+
+  .project-link {
+    justify-content: center;
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+  }
+
+  /* Education & Languages */
+  .edu-lang-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .edu-card {
+    padding: 22px 18px;
+  }
+
+  .degree-title {
+    font-size: 1.15rem;
+  }
+
+  .college-name {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .cgpa-pill {
+    font-size: 0.82rem;
+    margin-bottom: 16px;
+  }
+
+  .course-tags {
+    gap: 6px;
+  }
+
+  .course-tag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+
+  .lang-item {
+    padding: 14px 16px;
+  }
+
+  .lang-name {
+    font-size: 0.95rem;
+  }
+
+  .lang-level {
+    font-size: 0.8rem;
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .contact-card {
+    padding: 18px 16px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 14px;
+  }
+
+  .contact-info-left {
+    gap: 14px;
+    width: 100%;
+  }
+
+  .contact-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+
+  .contact-card-label {
+    font-size: 0.75rem;
+  }
+
+  .contact-card-value {
+    font-size: 0.92rem;
+    word-break: break-all;
   }
 
   .copy-btn {
-    align-self: flex-start;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.82rem;
   }
 
-  .footer-content,
+  /* iOS Auto-Zoom Prevention on Form Inputs */
+  .form-control {
+    font-size: 16px !important;
+    padding: 12px 14px;
+  }
+
+  /* Resume Modal on Mobile (Slide Up Bottom-Sheet Style) */
+  .resume-modal-backdrop {
+    padding: 12px 8px 0;
+    align-items: flex-end;
+  }
+
+  .resume-modal-content {
+    max-height: 92vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transform: translateY(100%);
+  }
+
+  .resume-modal-backdrop.open .resume-modal-content {
+    transform: translateY(0);
+  }
+
+  .resume-modal-header {
+    padding: 14px 18px;
+  }
+
+  .resume-modal-title {
+    font-size: 1.05rem;
+  }
+
+  .resume-paper-body {
+    padding: 18px 12px;
+  }
+
+  .resume-doc {
+    padding: 18px 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  .resume-name {
+    font-size: 1.45rem;
+  }
+
+  .resume-role-sub {
+    font-size: 0.95rem;
+  }
+
+  .resume-contact-row {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.82rem;
+  }
+
+  .resume-section-title {
+    font-size: 0.95rem;
+    margin: 18px 0 10px;
+  }
+
+  .resume-skill-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin-bottom: 8px;
+  }
+
+  .resume-skill-label {
+    font-size: 0.85rem;
+  }
+
+  .resume-skill-val {
+    font-size: 0.82rem;
+  }
+
+  .resume-job-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .resume-job-title {
+    font-size: 0.98rem;
+  }
+
+  .resume-job-company {
+    font-size: 0.88rem;
+  }
+
+  .resume-job-dates {
+    font-size: 0.78rem;
+  }
+
+  .resume-bullets {
+    padding-left: 16px;
+    gap: 4px;
+  }
+
+  .resume-bullets li {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* Footer on Mobile */
+  .site-footer {
+    padding: 36px 0 24px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .footer-verse {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 10px;
+    padding-top: 18px;
+  }
+
+  /* Floating UI Elements */
+  .back-to-top {
+    bottom: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  .toast-notification {
+    left: 16px;
+    right: 16px;
+    bottom: 20px;
+    font-size: 0.88rem;
+    justify-content: center;
+  }
+}
+
+/* --- Compact Phones (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .verse-banner {
+    font-size: 0.78rem;
+    padding: 8px 12px;
+    line-height: 1.4;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 8vw, 2.3rem);
+  }
+
+  .avatar-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .project-img-wrapper {
+    height: 180px;
+  }
+
+  .metrics-ribbon {
+    padding: 18px 12px;
+    gap: 12px;
+  }
+
+  .metric-number {
+    font-size: 1.65rem;
+  }
+
+  .metric-label {
+    font-size: 0.74rem;
+  }
+}
+
+/* --- Extra-Small Phones (max-width: 360px) --- */
+@media (max-width: 360px) {
+  .brand-logo {
+    font-size: 1.05rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .avatar-wrapper {
+    width: 175px;
+    height: 175px;
+  }
+
+  .metrics-ribbon {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 12px 14px;
+    font-size: 0.88rem;
   }
 }

@@ -25,26 +25,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.getElementById('mobile-toggle');
   const navLinks = document.getElementById('nav-links');
 
+  function closeMobileMenu() {
+    if (navLinks && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      if (mobileToggle) {
+        mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    }
+  }
+
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       const isOpen = navLinks.classList.contains('open');
+      document.body.classList.toggle('menu-open', isOpen);
       mobileToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
 
-    // Close mobile nav when clicking any nav link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    // Close mobile nav when clicking any nav link or drawer button
+    navLinks.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        closeMobileMenu();
       });
     });
 
-    // Close when clicking outside
+    // Close when clicking outside the nav drawer
     document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target) && navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        mobileToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        closeMobileMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeMobileMenu();
       }
     });
   }
@@ -127,6 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.classList.add('active');
         const filter = tab.getAttribute('data-filter');
 
+        // Smoothly center the tapped filter tab on mobile horizontal scrolling
+        tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+
         skillCards.forEach(card => {
           const category = card.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
@@ -175,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const printResumeBtn = document.getElementById('print-resume-btn');
 
   function openResume() {
+    closeMobileMenu();
     if (resumeModal) {
       resumeModal.classList.add('open');
       document.body.style.overflow = 'hidden';
