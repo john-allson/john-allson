@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Allson M — Python Full Stack Developer & AI/ML Engineer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of John Allson M — Python Full Stack Developer & AI/ML Engineer. Experienced in Django, FastAPI, YOLOv8 computer vision, LLMs, RAG pipelines, and AWS cloud deployment." />
+  <meta name="keywords" content="John Allson, John Allson M, Python Full Stack Developer, AI Engineer, Machine Learning, FastAPI, Django, YOLO, RAG, LangChain, Computer Vision, Tuticorin, Chennai, India" />
+  <meta name="author" content="John Allson M" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="John Allson M — Python Full Stack Developer & AI/ML Engineer" />
+  <meta property="og:description" content="Building scalable web applications, RESTful APIs, and production AI/ML systems. Proficient in Python, Django, FastAPI, YOLO, RAG, and AWS." />
+  <meta property="og:image" content="assets/meprofile2.jpg" />
+  <meta property="og:url" content="https://johnallson.onrender.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="John Allson M — Python Full Stack Developer & AI/ML Engineer" />
+  <meta name="twitter:description" content="Portfolio of John Allson M — Python Full Stack Developer & AI/ML Engineer." />
+  <meta name="twitter:image" content="assets/meprofile2.jpg" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+  <link rel="shortcut icon" href="favicon_io/favicon-32x32.png" />
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "John Allson M",
+    "jobTitle": "Python Full Stack Developer & AI/ML Engineer",
+    "url": "https://johnallson.onrender.com",
+    "email": "mailto:johnallson1000000@gmail.com",
+    "telephone": "+918637620660",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tuticorin",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "India"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Grace College of Engineering (Anna University)"
+    },
+    "sameAs": [
+      "https://github.com/john-allson",
+      "https://linkedin.com/in/johnallson",
+      "https://www.instagram.com/johnallsonm"
+    ],
+    "knowsAbout": [
+      "Python", "Full Stack Development", "FastAPI", "Django", "Machine Learning", 
+      "Artificial Intelligence", "YOLOv8", "Computer Vision", "RAG Pipelines", 
+      "Large Language Models", "LangChain", "AWS EC2", "PostgreSQL"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="ambient-glow-3"></div>
+
+  <!-- Inspirational Verse Banner -->
+  <aside class="verse-banner" aria-label="Inspirational Scripture">
+    <span class="verse-icon"><i class="fa-solid fa-sparkles"></i></span>
+    <span><em>"And whatsoever ye do, do it heartily, as to the Lord and not unto men,"</em> — <strong>Colossians 3:23</strong></span>
+  </aside>
+
+  <!-- Sticky Site Header & Navbar -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#hero" class="brand-logo" id="brand-link" aria-label="John Allson Home">
+        <span class="brand-badge"></span>
+        <span>JOHN ALLSON</span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#experience" class="nav-item">Experience</a></li>
+          <li><a href="#skills" class="nav-item">Skills</a></li>
+          <li><a href="#projects" class="nav-item">Projects</a></li>
+          <li><a href="#education" class="nav-item">Education</a></li>
+          <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark and Light Mode" title="Toggle Theme">
+          <i class="fa-regular fa-sun sun-icon"></i>
+          <i class="fa-regular fa-moon moon-icon"></i>
+        </button>
+
+        <!-- CTA Resume Action -->
+        <a href="#contact" class="btn btn-secondary btn-sm" id="nav-cta-btn">
+          <i class="fa-solid fa-paper-plane"></i> Hire Me
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for Full-Stack & AI Roles • Tuticorin, India</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">John Allson M</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            &lt;Python Full Stack Developer | AI & ML Engineer /&gt;
+          </div>
+
+          <p class="hero-summary">
+            Results-driven engineer specializing in building scalable web applications, RESTful APIs, and production AI/ML systems. Hands-on experience in <strong>Django, FastAPI, YOLOv8 computer vision</strong>, <strong>LLMs & RAG pipelines</strong>, and <strong>AWS cloud deployment</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="hero-projects-btn">
+              <span>Explore Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="hero-contact-btn">
+              <span>Get In Touch</span>
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
+
+          <div class="social-links" aria-label="Social Profiles">
+            <a href="https://github.com/john-allson" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile" id="social-github">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/johnallson" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile" id="social-linkedin">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/918637620660" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Chat on WhatsApp" id="social-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:johnallson1000000@gmail.com" class="social-icon-btn" title="Send Email" id="social-email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/johnallsonm" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram Profile" id="social-instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-border-glow"></div>
+            <div class="avatar-card">
+              <img src="assets/meprofile2.jpg" alt="John Allson M — Full Stack & AI Developer" id="hero-avatar" />
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="floating-chip chip-1">
+              <i class="fa-solid fa-eye" style="color: var(--accent-cyan);"></i>
+              <span>YOLOv8 & Computer Vision</span>
+            </div>
+            <div class="floating-chip chip-2">
+              <i class="fa-brands fa-python" style="color: var(--accent-indigo);"></i>
+              <span>FastAPI & Django Backends</span>
+            </div>
+            <div class="floating-chip chip-3">
+              <i class="fa-solid fa-brain" style="color: var(--accent-violet);"></i>
+              <span>LLMs & RAG Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="container">
+        <div class="metrics-ribbon">
+          <div class="metric-item">
+            <div class="metric-number text-gradient">4+</div>
+            <div class="metric-label">Internships Completed</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient">7.5</div>
+            <div class="metric-label">CGPA • Anna University</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient">100%</div>
+            <div class="metric-label">Hands-On Code & APIs</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient">AWS & CV</div>
+            <div class="metric-label">Production Deployment</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-user"></i> Professional Profile</span>
+          <h2 class="section-title">Bridging Full-Stack Systems with <span class="text-gradient">Intelligent AI</span></h2>
+          <p class="section-description">Dedicated to building end-to-end applications that transform real-world complexity into seamless digital experiences.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Summary Card -->
+          <div class="glass-card">
+            <div class="card-title">
+              <div class="card-title-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <h3>Summary & Vision</h3>
+            </div>
+            <p class="about-text">
+              I am a Python Full Stack Developer and AI Engineer passionate about designing scalable architectures, developing robust RESTful APIs, and implementing intelligent machine learning models into real-world production environments.
+            </p>
+            <p class="about-text">
+              With a strong engineering foundation in B.Tech Artificial Intelligence & Data Science from Grace College of Engineering (Anna University), I have executed real-world projects spanning computer vision for person re-identification, automated content creation pipelines, and context-aware RAG conversational systems.
+            </p>
+            <ul class="about-features">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Full Engineering Lifecycle:</strong> Concept, design, API development, testing, and AWS EC2 deployment.</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Modern AI Solutions:</strong> Production YOLO pipelines, LangChain, Groq API, and Phidata workflows.</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Location & Availability:</strong> Based in Tuticorin, Tamil Nadu, open to high-impact on-site or remote engineering roles.</li>
+            </ul>
+          </div>
+
+          <!-- Pillars Grid -->
+          <div class="pillar-grid">
+            <div class="pillar-item">
+              <span class="pillar-icon" style="color: var(--accent-cyan);"><i class="fa-solid fa-server"></i></span>
+              <h4 class="pillar-title">Backend Architecture</h4>
+              <p class="pillar-desc">Designing robust, modular APIs using Django, FastAPI, and Flask with clean architectural patterns and relational database optimization.</p>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon" style="color: var(--accent-indigo);"><i class="fa-solid fa-camera"></i></span>
+              <h4 class="pillar-title">Computer Vision & YOLO</h4>
+              <p class="pillar-desc">Real-time object detection, video stream frame processing, person re-identification, and edge model inference pipelines.</p>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon" style="color: var(--accent-violet);"><i class="fa-solid fa-network-wired"></i></span>
+              <h4 class="pillar-title">RAG & Generative AI</h4>
+              <p class="pillar-desc">Context-aware conversational agents built with Groq API, Phidata, Whisper, and custom vector search knowledge bases.</p>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon" style="color: var(--accent-emerald);"><i class="fa-brands fa-aws"></i></span>
+              <h4 class="pillar-title">Cloud & DevOps</h4>
+              <p class="pillar-desc">Deploying web applications to AWS EC2, configuring Linux cloud instances, Git version control, and CI/CD pipelines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE SECTION -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-timeline"></i> Work History</span>
+          <h2 class="section-title">Professional <span class="text-gradient">Experience</span></h2>
+          <p class="section-description">Hands-on internships delivering production-grade AI models, full-stack web applications, and data pipelines.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Experience 1: Stuvalley Technology -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">AIML Developer Intern</h3>
+                  <div class="timeline-company">
+                    <i class="fa-regular fa-building"></i> Stuvalley Technology Pvt. Ltd.
+                  </div>
+                </div>
+                <span class="timeline-badge">November 2025 – May 2026</span>
+              </div>
+              <div class="timeline-location">
+                <i class="fa-solid fa-location-dot"></i> Remote
+              </div>
+              <ul class="timeline-bullets">
+                <li>Develop and deploy AI-powered full-stack web applications using Python and AWS EC2 cloud infrastructure.</li>
+                <li>Build and maintain scalable RESTful APIs integrating machine learning models for real-time AI features.</li>
+                <li>Implement end-to-end data preprocessing pipelines and backend logic serving production ML workloads.</li>
+                <li>Collaborate across the full engineering lifecycle: design, development, testing, documentation, and deployment.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2: Aknesys Private Limited -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Junior AI Engineer Intern</h3>
+                  <div class="timeline-company">
+                    <i class="fa-regular fa-building"></i> Aknesys Private Limited
+                  </div>
+                </div>
+                <span class="timeline-badge">February 2026 – May 2026</span>
+              </div>
+              <div class="timeline-location">
+                <i class="fa-solid fa-location-dot"></i> Bengaluru, India
+              </div>
+              <ul class="timeline-bullets">
+                <li>Contributed to AI-based person detection and re-identification systems using YOLO models for real-time computer vision applications.</li>
+                <li>Implemented and evaluated YOLO-based object detection pipelines for accurate person detection in video streams.</li>
+                <li>Worked on computer vision workflows involving real-time video processing, model inference, and detection results.</li>
+                <li>Collaborated with the AI engineering team to develop, test, and improve computer vision solutions for practical deployment.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 3: Innovative Company -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Artificial Intelligence Intern</h3>
+                  <div class="timeline-company">
+                    <i class="fa-regular fa-building"></i> Innovative Company
+                  </div>
+                </div>
+                <span class="timeline-badge">July 2025</span>
+              </div>
+              <div class="timeline-location">
+                <i class="fa-solid fa-location-dot"></i> Tuticorin, India
+              </div>
+              <ul class="timeline-bullets">
+                <li>Built AI-driven applications with Python backends and interactive web interfaces.</li>
+                <li>Contributed to data processing, REST API development, and ML model integration projects.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 4: Thedal -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Data Analyst Intern</h3>
+                  <div class="timeline-company">
+                    <i class="fa-regular fa-building"></i> Thedal
+                  </div>
+                </div>
+                <span class="timeline-badge">December 2024 – January 2025</span>
+              </div>
+              <div class="timeline-location">
+                <i class="fa-solid fa-location-dot"></i> Thoothukudi, India
+              </div>
+              <ul class="timeline-bullets">
+                <li>Automated data workflows and built web-based dashboards using Python and data visualisation tools.</li>
+                <li>Developed backend scripts to prepare and clean ML-ready datasets, reducing manual preparation time.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-code"></i> Technical Stack</span>
+          <h2 class="section-title">Skills & <span class="text-gradient">Technologies</span></h2>
+          <p class="section-description">A curated toolkit of modern programming languages, AI/ML libraries, backend frameworks, and cloud services.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="tab-btn skill-tab-btn active" data-filter="all">All Tech</button>
+          <button class="tab-btn skill-tab-btn" data-filter="ai-ml">AI & ML</button>
+          <button class="tab-btn skill-tab-btn" data-filter="backend">Backend & APIs</button>
+          <button class="tab-btn skill-tab-btn" data-filter="languages">Languages</button>
+          <button class="tab-btn skill-tab-btn" data-filter="cloud-devops">Cloud & DevOps</button>
+          <button class="tab-btn skill-tab-btn" data-filter="databases">Databases</button>
+        </div>
+
+        <div class="skills-grid" id="skills-container">
+          <!-- Category: Languages -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-header">
+              <h3 class="skill-category-title">
+                <i class="fa-solid fa-code" style="color: var(--accent-cyan);"></i> Languages
+              </h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL</span>
+              <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+              <span class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+            </div>
+          </div>
+
+          <!-- Category: Backend -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <h3 class="skill-category-title">
+                <i class="fa-solid fa-server" style="color: var(--accent-indigo);"></i> Backend & APIs
+              </h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-solid fa-cubes"></i> Django</span>
+              <span class="skill-chip"><i class="fa-solid fa-flask"></i> Flask</span>
+              <span class="skill-chip"><i class="fa-solid fa-bolt"></i> FastAPI</span>
+              <span class="skill-chip"><i class="fa-solid fa-network-wired"></i> RESTful APIs</span>
+              <span class="skill-chip"><i class="fa-solid fa-gears"></i> Microservices</span>
+            </div>
+          </div>
+
+          <!-- Category: AI & ML -->
+          <div class="skill-card" data-category="ai-ml">
+            <div class="skill-header">
+              <h3 class="skill-category-title">
+                <i class="fa-solid fa-brain" style="color: var(--accent-violet);"></i> AI / ML & Vision
+              </h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-solid fa-microchip"></i> YOLO Models</span>
+              <span class="skill-chip"><i class="fa-solid fa-diagram-project"></i> RAG Pipelines</span>
+              <span class="skill-chip"><i class="fa-solid fa-robot"></i> LLMs</span>
+              <span class="skill-chip"><i class="fa-solid fa-link"></i> LangChain</span>
+              <span class="skill-chip"><i class="fa-solid fa-bolt"></i> Groq API</span>
+              <span class="skill-chip"><i class="fa-solid fa-microphone-lines"></i> Whisper</span>
+              <span class="skill-chip"><i class="fa-solid fa-chart-line"></i> Scikit-learn</span>
+              <span class="skill-chip"><i class="fa-solid fa-cloud-arrow-up"></i> Model Deployment</span>
+            </div>
+          </div>
+
+          <!-- Category: Cloud & DevOps -->
+          <div class="skill-card" data-category="cloud-devops">
+            <div class="skill-header">
+              <h3 class="skill-category-title">
+                <i class="fa-solid fa-cloud" style="color: var(--accent-emerald);"></i> Cloud & DevOps
+              </h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-brands fa-aws"></i> AWS EC2</span>
+              <span class="skill-chip"><i class="fa-solid fa-cloud-upload"></i> Cloud Deployment</span>
+              <span class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="skill-chip"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="skill-chip"><i class="fa-solid fa-terminal"></i> VS Code</span>
+              <span class="skill-chip"><i class="fa-solid fa-book"></i> Jupyter</span>
+            </div>
+          </div>
+
+          <!-- Category: Databases -->
+          <div class="skill-card" data-category="databases">
+            <div class="skill-header">
+              <h3 class="skill-category-title">
+                <i class="fa-solid fa-database" style="color: var(--accent-cyan);"></i> Databases
+              </h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-solid fa-server"></i> PostgreSQL</span>
+              <span class="skill-chip"><i class="fa-solid fa-database"></i> MySQL</span>
+              <span class="skill-chip"><i class="fa-solid fa-fire"></i> Firebase</span>
+            </div>
+          </div>
+
+          <!-- Category: Libraries -->
+          <div class="skill-card" data-category="ai-ml">
+            <div class="skill-header">
+              <h3 class="skill-category-title">
+                <i class="fa-solid fa-book-bookmark" style="color: var(--accent-indigo);"></i> Libraries & Tools
+              </h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip"><i class="fa-solid fa-table"></i> Pandas</span>
+              <span class="skill-chip"><i class="fa-solid fa-calculator"></i> NumPy</span>
+              <span class="skill-chip"><i class="fa-solid fa-brain"></i> Phidata</span>
+              <span class="skill-chip"><i class="fa-solid fa-camera"></i> OpenCV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-rocket"></i> Portfolio Showcase</span>
+          <h2 class="section-title">Key <span class="text-gradient">Projects</span></h2>
+          <p class="section-description">Practical systems and AI applications engineered for high performance, automation, and real-time user engagement.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: YouTube Automation AI Tool -->
+          <article class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/youtube-automation-preview.jpg" alt="YouTube Automation AI Tool Interface Preview" />
+              <span class="project-badge">Python Full Stack</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">YouTube Automation AI Tool</h3>
+              <p class="project-desc">
+                Engineered an end-to-end web application for automated YouTube video creation: automated topic generation, content scraping, auto-captioning waveform sync, and direct publishing via Google APIs. Features an intuitive workflow management UI enabling non-technical users to trigger and monitor automation pipelines.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">DeepSeek LLM</span>
+                <span class="project-tag">Google APIs</span>
+                <span class="project-tag">Web Scraping</span>
+                <span class="project-tag">Full Stack UI</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/john-allson" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fa-brands fa-github"></i> View Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: AI Study & Research Chatbot -->
+          <article class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/ai-chatbot-preview.jpg" alt="AI Study and Research Chatbot Interface" />
+              <span class="project-badge">Full Stack Web Application</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AI Study & Research Chatbot</h3>
+              <p class="project-desc">
+                Built a context-aware conversational AI assistant utilizing Groq API, Phidata agentic workflows, and a high-throughput RAG pipeline for real-time domain-specific research responses. Delivered a responsive frontend ensuring a seamless multi-turn dialogue experience with citations and code snippets.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Groq API</span>
+                <span class="project-tag">Phidata</span>
+                <span class="project-tag">RAG Pipeline</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">Vector Search</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/john-allson" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fa-brands fa-github"></i> View Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Gracemo Robot -->
+          <article class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/GracEmo.jpg" alt="Gracemo Conversational Robot with Web Interface" />
+              <span class="project-badge">IoT + AI</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Gracemo – Conversational Robot with Web Interface</h3>
+              <p class="project-desc">
+                Developed a voice-enabled intelligent robot integrated with an interactive web-based dashboard. Combines natural language processing, speech recognition (Whisper), Arduino microcontroller coordination, and remote VNC access for a smooth, production-ready user experience.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Speech Recognition</span>
+                <span class="project-tag">Whisper</span>
+                <span class="project-tag">Arduino IoT</span>
+                <span class="project-tag">Web Dashboard</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/john-allson" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fa-brands fa-github"></i> View Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: CGPA Calculator -->
+          <article class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/cgpa.png" alt="Anna University CGPA and GPA Calculator" />
+              <span class="project-badge">Academic Web Utility</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">CGPA & GPA Calculator</h3>
+              <p class="project-desc">
+                A dedicated web application designed for engineering students under Anna University regulations. Computes semester GPA and cumulative CGPA across various departments with dynamic subject credits, real-time validation, and intuitive user feedback.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">Anna University Regulation</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/john-allson" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <i class="fa-brands fa-github"></i> View Repository
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & LANGUAGES SECTION -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academics & Proficiency</span>
+          <h2 class="section-title">Education & <span class="text-gradient">Languages</span></h2>
+          <p class="section-description">Strong theoretical and foundational background in artificial intelligence and computer science principles.</p>
+        </div>
+
+        <div class="edu-lang-grid">
+          <!-- Education Card -->
+          <div class="glass-card edu-card">
+            <div class="degree-header">
+              <div>
+                <h3 class="degree-title">B.Tech in Artificial Intelligence & Data Science</h3>
+                <div class="college-name">Grace College of Engineering, Tuticorin | Anna University</div>
+              </div>
+              <span class="timeline-badge">Expected 2026</span>
+            </div>
+
+            <div class="cgpa-pill">
+              <i class="fa-solid fa-award"></i> CGPA: 7.5 / 10
+            </div>
+
+            <h4 class="coursework-title">Relevant Coursework:</h4>
+            <div class="course-tags">
+              <span class="course-tag">Python Programming</span>
+              <span class="course-tag">Web Development</span>
+              <span class="course-tag">Machine Learning</span>
+              <span class="course-tag">Data Structures</span>
+              <span class="course-tag">Database Management Systems</span>
+            </div>
+          </div>
+
+          <!-- Languages Card -->
+          <div class="glass-card edu-card">
+            <div class="card-title">
+              <div class="card-title-icon"><i class="fa-solid fa-language"></i></div>
+              <h3>Languages</h3>
+            </div>
+            <p class="about-text" style="margin-bottom: 16px;">Effective verbal and written technical communication across distributed teams.</p>
+            <div class="lang-list">
+              <div class="lang-item">
+                <span class="lang-name">Tamil</span>
+                <span class="lang-level"><i class="fa-solid fa-check"></i> Native</span>
+              </div>
+              <div class="lang-item">
+                <span class="lang-name">English</span>
+                <span class="lang-level"><i class="fa-solid fa-check"></i> Fluent</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-envelope"></i> Let's Connect</span>
+          <h2 class="section-title">Get in <span class="text-gradient">Touch</span></h2>
+          <p class="section-description">Have a project, full-stack opening, or AI engineering opportunity? I'm ready to contribute!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Channels -->
+          <div class="contact-cards-col">
+            <!-- Email -->
+            <div class="glass-card contact-card">
+              <div class="contact-info-left">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <div class="contact-card-label">Email Address</div>
+                  <a href="mailto:johnallson1000000@gmail.com" class="contact-card-value">johnallson1000000@gmail.com</a>
+                </div>
+              </div>
+              <button class="copy-btn" data-copy="johnallson1000000@gmail.com" data-label="Email" title="Copy Email">
+                <i class="fa-regular fa-copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- Phone / WhatsApp -->
+            <div class="glass-card contact-card">
+              <div class="contact-info-left">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <div class="contact-card-label">Phone / WhatsApp</div>
+                  <a href="tel:+918637620660" class="contact-card-value">+91 8637620660</a>
+                </div>
+              </div>
+              <button class="copy-btn" data-copy="+918637620660" data-label="Phone" title="Copy Phone Number">
+                <i class="fa-regular fa-copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- Location -->
+            <div class="glass-card contact-card">
+              <div class="contact-info-left">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <div class="contact-card-label">Current Location</div>
+                  <div class="contact-card-value">Tuticorin, Tamil Nadu, India</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media Action Pill -->
+            <div class="glass-card contact-card" style="justify-content: flex-start; gap: 24px;">
+              <span style="font-size: 0.95rem; font-weight: 600; color: var(--text-secondary);">Socials:</span>
+              <div class="social-links">
+                <a href="https://linkedin.com/in/johnallson" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/john-allson" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://wa.me/918637620660" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/johnallsonm" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Form -->
+          <div class="glass-card">
+            <div class="card-title">
+              <div class="card-title-icon"><i class="fa-solid fa-paper-plane"></i></div>
+              <h3>Send a Message</h3>
+            </div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="contact-name">Your Name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Alexander Graham" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Your Email *</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="e.g. name@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Full-Stack / AI Developer Opportunity" />
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message *</label>
+                <textarea id="contact-message" class="form-control" placeholder="Hi John, I came across your portfolio and would like to connect regarding..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="contact-submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="brand-badge"></span> JOHN ALLSON M
+        </div>
+        <div class="footer-verse">
+          "And whatsoever ye do, do it heartily, as to the Lord and not unto men," — Colossians 3:23
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/john-allson" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/johnallson" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://wa.me/918637620660" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 John Allson M. All rights reserved.</p>
+        <p>Built with Vanilla HTML5, CSS3 & JavaScript. Fast, accessible & production-ready.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Floating Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
